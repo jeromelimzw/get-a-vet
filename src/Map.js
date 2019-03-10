@@ -1,7 +1,8 @@
 import React from "react";
 import { Map as LeafletMap, TileLayer, Marker, Popup } from "react-leaflet";
+import { iconPerson } from "./static/icon";
 
-const Map = ({ selectedLocation, addresses, mapCenter }) => {
+const Map = ({ selectedLocation, addresses, mapCenter, currLocation }) => {
   return (
     <React.Fragment>
       <LeafletMap
@@ -22,6 +23,10 @@ const Map = ({ selectedLocation, addresses, mapCenter }) => {
             <Popup>{a.name}</Popup>
           </Marker>
         ))}
+
+        <Marker position={currLocation} radius="100px" icon={iconPerson}>
+          <Popup>You are Here!</Popup>
+        </Marker>
       </LeafletMap>
     </React.Fragment>
   );

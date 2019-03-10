@@ -43,11 +43,19 @@ const AddressDisplay = ({ addresses, selectAddressHandler }) => {
                 <a href={`tel:${a.tel_office_1}`}>{a.tel_office_1}</a>
               </td>
               <td>
-                <i
-                  className="fas fa-map-marker-alt f3 pointer"
-                  value={a._id}
-                  onClick={selectAddressHandler}
-                />
+                <a
+                  href={`https://www.google.com/maps/dir/Current+Location/Singapore+${
+                    a.post_Code
+                  }`}
+                  rel="noopener noreferrer"
+                  target="_blank"
+                >
+                  <i
+                    className="fas fa-map-marker-alt f3 pointer"
+                    value={a._id}
+                    onClick={selectAddressHandler}
+                  />
+                </a>
               </td>
             </tr>
           </React.Fragment>
