@@ -6,8 +6,8 @@ const vetLocations = [
     address: "1 Turf Club Avenue Singapore Racecourse",
     _id: 1,
     type: "Hospital",
-    tel_office_2: "na",
-    tel_office_1: "68791000",
+
+    tel_office: "68791000",
     coordinates: [1.4220345374582, 103.759210217078]
   },
   {
@@ -17,8 +17,8 @@ const vetLocations = [
     address: "716 Yishun Street 71 #01-254",
     _id: 2,
     type: "Clinic",
-    tel_office_2: "na",
-    tel_office_1: "68539397",
+
+    tel_office: "68539397",
     coordinates: [1.42615726577009, 103.827449409403]
   },
   {
@@ -28,8 +28,8 @@ const vetLocations = [
     address: "338 Ang Mo Kio Avenue 1 #01-1671",
     _id: 3,
     type: "Clinic",
-    tel_office_2: "na",
-    tel_office_1: "64816889",
+
+    tel_office: "64816889",
     coordinates: [1.36389570157549, 103.848986957428]
   },
   {
@@ -39,8 +39,8 @@ const vetLocations = [
     address: "24 Jalan Kelulut",
     _id: 4,
     type: "Clinic",
-    tel_office_2: "na",
-    tel_office_1: "64813700",
+
+    tel_office: "64813700",
     coordinates: [1.38354018549075, 103.875647501905]
   },
   {
@@ -50,8 +50,8 @@ const vetLocations = [
     address: "50 Burnfoot Terrace, Frankel Estate",
     _id: 5,
     type: "Clinic",
-    tel_office_2: "na",
-    tel_office_1: "62455543",
+
+    tel_office: "62455543",
     coordinates: [1.31266236093812, 103.922764499412]
   },
   {
@@ -61,8 +61,8 @@ const vetLocations = [
     address: "5 Mandai Road",
     _id: 6,
     type: "Clinic",
-    tel_office_2: "na",
-    tel_office_1: "64515242",
+
+    tel_office: "64515242",
     coordinates: [1.40226624925286, 103.816750686491]
   },
   {
@@ -72,8 +72,8 @@ const vetLocations = [
     address: "11 Binjai Park",
     _id: 7,
     type: "Clinic",
-    tel_office_2: "na",
-    tel_office_1: "61006000",
+
+    tel_office: "61006000",
     coordinates: [1.33619442059986, 103.786775400103]
   },
   {
@@ -83,8 +83,8 @@ const vetLocations = [
     address: "3 Greendale Avenue",
     _id: 8,
     type: "Clinic",
-    tel_office_2: "na",
-    tel_office_1: "64637100",
+
+    tel_office: "64637100",
     coordinates: [1.33161815782719, 103.807134820174]
   },
   {
@@ -94,8 +94,8 @@ const vetLocations = [
     address: "139 Tampines Street 11 #01-42",
     _id: 9,
     type: "Clinic",
-    tel_office_2: "na",
-    tel_office_1: "65871797",
+
+    tel_office: "65871797",
     coordinates: [1.34616073984856, 103.944509228]
   },
   {
@@ -105,10 +105,18 @@ const vetLocations = [
     address: "139 Tampines Street 11 #01-62",
     _id: 10,
     type: "Clinic",
-    tel_office_2: "na",
-    tel_office_1: "67893578",
+
+    tel_office: "67893578",
     coordinates: [1.34616073984856, 103.944509228]
   }
 ];
 
-export default vetLocations;
+const getLocations = () => {
+  return vetLocations;
+};
+
+const addLocation = item => {
+  vetLocations.push(item);
+};
+
+export { getLocations, addLocation };
