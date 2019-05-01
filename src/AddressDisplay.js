@@ -40,7 +40,7 @@ const AddressDisplay = ({ addresses, selectAddressHandler }) => {
               <td>{a.postal_code}</td>
               <td>{a.type}</td>
               <td>
-                <a href={`tel:${a.tel_office_1}`}>{a.tel_office_1}</a>
+                <a href={`tel:${a.tel_office}`}>{a.tel_office}</a>
               </td>
               <td>
                 <a
