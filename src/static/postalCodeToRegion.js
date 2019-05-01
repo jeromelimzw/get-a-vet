@@ -1,8 +1,23 @@
 const postalCodeToRegion = [
   {
+    Zone: "City",
+    District: 1,
+    BeginsWith: [1, 2, 3, 4, 5, 6]
+  },
+  {
+    Zone: "City",
+    District: 2,
+    BeginsWith: [7, 8]
+  },
+  {
     Zone: "South",
     District: 3,
     BeginsWith: [14, 15, 16]
+  },
+  {
+    Zone: "City",
+    District: 4,
+    BeginsWith: [9, 10]
   },
 
   {
