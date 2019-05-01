@@ -2,6 +2,7 @@ import React, { Component } from "react";
 import { getLocations } from "./static/vet_locations";
 import AddressDisplay from "./AddressDisplay";
 import Map from "./Map";
+import SearchBar from "./SearchBar";
 
 class MapPage extends Component {
   constructor() {
@@ -11,13 +12,21 @@ class MapPage extends Component {
       selectedId: "",
       currLocation: [1.2835, 103.8468],
       mapCenter: [1.3521, 103.8198],
-      zoom: 16
+      zoom: 16,
+      searchfield: ""
     };
   }
 
   componentDidMount() {
-    this.setState({ locations: getLocations() });
+    this.updateLocations();
   }
+
+  updateLocations = async () => {
+    const filteredLocations = getLocations().filter(a =>
+      a.name.toLowerCase().includes(this.state.searchfield)
+    );
+    await this.setState({ locations: filteredLocations });
+  };
 
   selectAddressHandler = event => {
     this.state.selectedId ===
@@ -26,6 +35,11 @@ class MapPage extends Component {
       : this.setState({
           selectedId: parseInt(event.currentTarget.getAttribute("value"))
         });
+  };
+
+  handleSearchBar = async event => {
+    await this.setState({ searchfield: event.target.value.toLowerCase() });
+    await this.updateLocations();
   };
 
   render() {
@@ -45,6 +59,7 @@ class MapPage extends Component {
           mapCenter={mapCenter}
           selectAddressHandler={selectAddressHandler}
         />
+        <SearchBar handleSearchBar={this.handleSearchBar} />
         <AddressDisplay
           addresses={locations}
           selectAddressHandler={selectAddressHandler}
