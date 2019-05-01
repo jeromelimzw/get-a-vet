@@ -1,6 +1,6 @@
 import React, { Component } from "react";
 import { Container, Form, FormGroup, Label, Input, Button } from "reactstrap";
-import { addLocation, getLocations } from "./static/vet_locations_5only";
+import { addLocation } from "./static/vet_locations";
 
 class EditLocation extends Component {
   constructor(props) {
@@ -53,10 +53,11 @@ class EditLocation extends Component {
       tel_office: this.state.tel,
       coordinates: this.state.coordinates
     };
-    console.log(newLocation);
+
     addLocation(newLocation);
-    console.log(getLocations());
+
     alert(`${this.state.type} has been added.`);
+    this.props.history.push("/");
   };
   render() {
     return (

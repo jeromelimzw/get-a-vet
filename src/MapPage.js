@@ -1,5 +1,5 @@
 import React, { Component } from "react";
-import { getLocations } from "./static/vet_locations_5only";
+import { getLocations } from "./static/vet_locations";
 import AddressDisplay from "./AddressDisplay";
 import Map from "./Map";
 
