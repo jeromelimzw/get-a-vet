@@ -4,7 +4,7 @@ import {
   TileLayer,
   Marker,
   Tooltip,
-  Popup
+  CircleMarker
 } from "react-leaflet";
 
 const Map = ({ selectedLocation, addresses, mapCenter, currLocation }) => {
@@ -29,9 +29,9 @@ const Map = ({ selectedLocation, addresses, mapCenter, currLocation }) => {
           </Marker>
         ))}
 
-        <Marker position={currLocation} radius="100px" opacity="0.5">
+        <CircleMarker center={currLocation} radius="10">
           <Tooltip>You are Here!</Tooltip>
-        </Marker>
+        </CircleMarker>
       </LeafletMap>
     </div>
   );

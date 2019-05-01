@@ -9,7 +9,7 @@ class MapPage extends Component {
     this.state = {
       locations: [],
       selectedId: "",
-      currLocation: [1.4512364, 103.8168724],
+      currLocation: [1.2835, 103.8468],
       mapCenter: [1.3521, 103.8198],
       zoom: 16
     };
